@@ -361,8 +361,12 @@ set_target_properties(${qhull_STATICR} PROPERTIES
     VERSION ${qhull_VERSION})
 
 if(UNIX)
+  if (IOS)
+    message(STATUS "iOS target link ng.")
+  else()
     target_link_libraries(${qhull_STATIC} m)
     target_link_libraries(${qhull_STATICR} m)
+  endif()
 endif(UNIX)
 
 # ---------------------------------------
@@ -388,23 +392,46 @@ set(qvoronoi_SOURCES    src/qvoronoi/qvoronoi.c)
 set(qhalf_SOURCES       src/qhalf/qhalf.c)
 
 add_executable(qhull ${qhull_SOURCES})
-target_link_libraries(qhull ${qhull_STATICR})
+if (IOS)
+    message(STATUS "iOS target link ng.")
+else()
+    target_link_libraries(qhull ${qhull_STATICR})
+endif()
 
 add_executable(rbox ${rbox_SOURCES})
-target_link_libraries(rbox ${qhull_STATIC})
+if (IOS)
+    message(STATUS "iOS target link ng.")
+else()
+    target_link_libraries(rbox ${qhull_STATIC})
+endif()
 
 add_executable(qconvex ${qconvex_SOURCES})
-target_link_libraries(qconvex ${qhull_STATIC})
+if (IOS)
+    message(STATUS "iOS target link ng.")
+else()
+    target_link_libraries(qconvex ${qhull_STATIC})
+endif()
 
 add_executable(qdelaunay ${qdelaunay_SOURCES})
-target_link_libraries(qdelaunay ${qhull_STATIC})
+if (IOS)
+    message(STATUS "iOS target link ng.")
+else()
+    target_link_libraries(qdelaunay ${qhull_STATIC})
+endif()
 
 add_executable(qvoronoi ${qvoronoi_SOURCES})
-target_link_libraries(qvoronoi ${qhull_STATIC})
+if (IOS)
+    message(STATUS "iOS target link ng.")
+else()
+    target_link_libraries(qvoronoi ${qhull_STATIC})
+endif()
 
 add_executable(qhalf ${qhalf_SOURCES})
-target_link_libraries(qhalf ${qhull_STATIC})
-
+if (IOS)
+    message(STATUS "iOS target link ng.")
+else()
+    target_link_libraries(qhalf ${qhull_STATIC})
+endif()
 
 # ---------------------------------------
 # Define install
