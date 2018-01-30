@@ -405,10 +405,10 @@ else()
     target_link_libraries(rbox ${qhull_STATIC})
 endif()
 
-add_executable(qconvex ${qconvex_SOURCES})
 if (IOS)
     message(STATUS "iOS target link ng.")
 else()
+    add_executable(qconvex ${qconvex_SOURCES})
     target_link_libraries(qconvex ${qhull_STATIC})
 endif()
 
