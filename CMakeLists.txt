@@ -362,12 +362,8 @@ set_target_properties(${qhull_STATICR} PROPERTIES
     VERSION ${qhull_VERSION})
 
 if(UNIX)
-#  if (IOS)
-#    message(STATUS "iOS target link ng.")
-#  else()
     target_link_libraries(${qhull_STATIC} m)
     target_link_libraries(${qhull_STATICR} m)
-#  endif()
 endif(UNIX)
 
 # ---------------------------------------
