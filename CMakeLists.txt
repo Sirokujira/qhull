@@ -435,9 +435,6 @@ endif()
 # ---------------------------------------
 
 # install(TARGETS ${qhull_TARGETS_INSTALL}
-#         RUNTIME DESTINATION ${BIN_INSTALL_DIR}
-#         LIBRARY DESTINATION ${LIB_INSTALL_DIR}
-#         ARCHIVE DESTINATION ${LIB_INSTALL_DIR})
 install(TARGETS ${qhull_STATIC} ${qhull_STATICR} ${qhull_CPP}
         RUNTIME DESTINATION ${BIN_INSTALL_DIR}
         LIBRARY DESTINATION ${LIB_INSTALL_DIR}
